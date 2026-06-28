@@ -7,12 +7,12 @@ function App() {
     const [loading, setLoading] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    const handleReason = async (yes: boolean) => {
-        const direction = yes ? 'yes' : 'no';
+    const handleReason = async (sayYes: boolean) => {
+        const direction = sayYes ? 'yes' : 'no';
         setLoading(direction)
         setError(null);
         try {
-            const data = await getReason(yes)
+            const data = await getReason(sayYes)
             setReason(data.reason);
         }
         catch (error) {
